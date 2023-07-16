@@ -1,8 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
 
-<style scoped>
-</style>
+</script>
+
+<style scoped></style>
