@@ -21,6 +21,32 @@ export default [
     component: () => import('@/views/TaskPage.vue')
   },
   {
+    name: 'UserPage',
+    path: '/users',
+    component: () => import('@/views/UserPage.vue'),
+    redirect: () => {
+      return { name: 'UserList' }
+    },
+    children: [
+      {
+        name: 'UserList',
+        path: '',
+        component: () => import('@/views/UserList.vue')
+      },
+      {
+        name: 'UserAdd',
+        path: 'add',
+        component: () => import('@/views/UserAdd.vue')
+      },
+      {
+        name:'UserId',
+        path:':id',
+        props: true,
+        component:()=>import('@/views/UserIdPage.vue')
+      }
+    ]
+  },
+  {
     name: 'AboutPage',
     path: '/about',
     component: () => import('@/views/AboutPage.vue'),
