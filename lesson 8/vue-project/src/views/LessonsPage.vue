@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Users Page</h1>
+        <h1>Lessons Page</h1>
         <button @click="toMain()">Home Page</button>
         <router-view></router-view>
     </div>

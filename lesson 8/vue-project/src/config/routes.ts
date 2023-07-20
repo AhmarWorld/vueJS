@@ -47,6 +47,32 @@ export default [
     ]
   },
   {
+    name:'LessonPage',
+    path:'/lessons',
+    component: ()=> import('@/views/LessonsPage.vue'),
+    redirect:()=>{
+      return{name:'LessonsList'}
+    },
+    children:[
+      {
+        name:'LessonsList',
+        path:'',
+        component:()=>import('@/views/LessonsList.vue')
+      },
+      {
+        name:'LessonAdd',
+        path:"add",
+        component:()=>import('@/views/LessonAdd.vue')
+      },
+      {
+        name:'LessonId',
+        path:':id',
+        props: true,
+        component:()=>import('@/views/LessonIdPage.vue')
+      }
+    ]
+  },
+  {
     name: 'AboutPage',
     path: '/about',
     component: () => import('@/views/AboutPage.vue'),

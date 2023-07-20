@@ -35,5 +35,7 @@ const emits = defineEmits<Emits>()
   justify-content: space-around;
   align-content: center;
   padding: 10px;
+  text-decoration: none;
+  color: white;
 }
 </style>

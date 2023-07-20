@@ -14,6 +14,9 @@
       <li>
         <router-link :to="{ name: 'UserPage' }">Users</router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'LessonPage' }">Lessons</router-link>
+      </li>
     </ul>
   </div>
 </template>
