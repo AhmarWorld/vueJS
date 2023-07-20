@@ -4,5 +4,7 @@ export interface Lesson {
     surname: string
     father: string
     title: string
+    discription?: string
     time: string
+    students?:object
 }

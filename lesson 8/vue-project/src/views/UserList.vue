@@ -52,7 +52,7 @@ const data = [
     phone: '1-463-123-4447'
   },
   {
-    id: '1079584103849231409182',
+    id: 1079584103849231,
     name: 'Temirlan',
     surname: 'Tuleubayev',
     father: 'NN',

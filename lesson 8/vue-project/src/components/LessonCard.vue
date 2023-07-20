@@ -1,6 +1,7 @@
 <template>
     <div class="usercard">
       <router-link :to="{name:'LessonId', params:{id: props.lessonId}}"><h3>{{ props.title }}</h3></router-link>
+      
       <h4>{{ props.name }} {{ props.surname }} {{ props.father }}</h4>
       <p>{{ props.time }}</p>
     </div>

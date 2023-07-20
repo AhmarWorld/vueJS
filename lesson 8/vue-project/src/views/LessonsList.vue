@@ -10,6 +10,7 @@
       </div>
       <lesson-card v-for="lesson in lessons"
       :key="lesson.id"
+      :lesson-id="lesson.id"
       :name="lesson.name"
       :surname="lesson.surname"
       :father="lesson.father"
