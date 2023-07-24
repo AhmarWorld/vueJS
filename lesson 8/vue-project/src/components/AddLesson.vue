@@ -29,6 +29,8 @@
 import { ref, onMounted } from 'vue'
 import type { Lesson } from '@/types/lesson'
 import CheckboxStudent from '@/components/CheckboxStudent.vue'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 const fullname = ref(``)
 const lesson = ref<Lesson>({
   name: ``,
@@ -42,7 +44,7 @@ const teachers: any = []
 const students: any = ref([])
 onMounted(() => {
   const users = JSON.parse(localStorage.getItem('UsersData') as string)
-  users.forEach((user: any) => {
+  users?.forEach((user: any) => {
     if (user.role == 'teacher') {
       let teacher = {
         id: user.id,
@@ -79,10 +81,12 @@ function lessonAddData(obj: any) {
   
   lessons.push(newLesson)
   localStorage.setItem('LessonsData', JSON.stringify(lessons))
-  location.replace(`http://127.0.0.1:5173/lessons/${newLesson.id}`)
+  // location.replace(`http://127.0.0.1:5173/lessons/${newLesson.id}`)
+  router.push({name:'LessonId', params:{id:newLesson.id}})
 }
 function cancel() {
-  location.replace('http://127.0.0.1:5173/lessons')
+  // location.replace('http://127.0.0.1:5173/lessons')
+  router.push({name:'LessonPage'})
 }
 </script>
 

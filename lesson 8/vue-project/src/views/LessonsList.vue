@@ -23,6 +23,8 @@
   <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import LessonCard from '@/components/LessonCard.vue'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 const data = [
   {
     id: 1,
@@ -41,7 +43,8 @@ onMounted(() => {
 const lessons = ref(JSON.parse(localStorage.getItem('LessonsData') as string))
 
   function addrelocate() {
-    location.replace('http://127.0.0.1:5173/lessons/add')
+    // location.replace('http://127.0.0.1:5173/lessons/add')
+    router.push({name:'LessonAdd'})
   }
   </script>
   

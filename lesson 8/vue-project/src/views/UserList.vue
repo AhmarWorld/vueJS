@@ -23,6 +23,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import UserCard from '@/components/UserCard.vue'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 const data = [
   {
     id: 1,
@@ -68,7 +70,8 @@ onMounted(() => {
 })
 const users = ref(JSON.parse(localStorage.getItem('UsersData') as string))
 function addrelocate() {
-  location.replace('http://127.0.0.1:5173/users/add')
+  // location.replace('http://127.0.0.1:5173/users/add')
+  router.push({name:'UserAdd'})
 }
 </script>
 

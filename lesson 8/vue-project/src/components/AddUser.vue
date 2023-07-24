@@ -13,6 +13,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { User } from '@/types/user'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 
 const user = ref<User>({
   name: '',
@@ -26,10 +28,12 @@ function userAddData(obj: object){
   let newUser = Object.assign({ id: new Date().getTime() } as User, obj)
   users.push(newUser)
   localStorage.setItem('UsersData', JSON.stringify(users))
-  location.replace(`http://127.0.0.1:5173/users/${newUser.id}`)
+  // location.replace(`http://127.0.0.1:5173/users/${newUser.id}`)
+  router.push({name:'UserId', params:{id:newUser.id}})
 }
 function cancel(){
-  location.replace('http://127.0.0.1:5173/users')
+  // location.replace('http://127.0.0.1:5173/users')
+  router.push({name:'UserPage'})
 }
 </script>
 
